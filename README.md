@@ -15,6 +15,7 @@ npm i flow-field-ts
 This is the first structure to create that represents the entire grid area.
 
 ```typescript
+import { InitialGrid, vec } from 'flow-field-ts'
 const grid = new InitialGrid(vec(10, 10));
 ```
 
@@ -24,7 +25,10 @@ The next step is to convert to a `CostGrid` by providing the destination vector,
 
 
 ```typescript
-const costGrid = g.toCostGrid(ffVec(9, 9), 1, []);
+import { InitialGrid, vec } from 'flow-field-ts'
+
+const grid = new InitialGrid(vec(10, 10));
+const costGrid = grid.toCostGrid(vec(9, 9), 1, []); // destination would be GridCell at 9,9
 ```
 
 ## 3. Convert to IntegrationGrid
@@ -32,6 +36,10 @@ const costGrid = g.toCostGrid(ffVec(9, 9), 1, []);
 The final step to to convert to `IntegrationGrid` which will create the destination vector of each `GridCell`.
 
 ```typescript
+import { InitialGrid, vec } from 'flow-field-ts'
+
+const grid = new InitialGrid(vec(10, 10));
+const costGrid = grid.toCostGrid(vec(9, 9), 1, []);
 const iGrid = costGrid.toIntegrationGrid();
 ```
 
@@ -93,7 +101,11 @@ game.start().then(() => {
             
             if (gridCell) {
                 // Sets velocity to move actor
-                actor.vel = vec(gridCell.direction.x * SPEED, gridCell.direction.y * SPEED);
+                // note: This is an excaliburjs Vector
+                actor.vel = vec(
+                    gridCell.direction.x * SPEED,
+                    gridCell.direction.y * SPEED
+                );
             }
             
             if (actor.vel.equals(Vector.Zero)) {

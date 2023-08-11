@@ -1,6 +1,6 @@
 {
   "name": "flow-field-ts",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "module",
   "exports": {
     ".": {
@@ -24,9 +24,12 @@
     "rollup-plugin-typescript-paths": "^1.4.0",
     "tslib": "^2.6.1",
     "typescript": "^5.0.2",
-    "vite": "^4.4.5"
-  },
-  "dependencies": {
+    "vite": "^4.4.5",
     "@types/node": "^20.4.9"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MikeysNotebook/flow-field-ts.git"
+  },
+  "keywords": [ "typescript", "flow field", "flow", "field", "pathfinding", "game", "excaliburjs", "game development", "game dev" ]
 }
