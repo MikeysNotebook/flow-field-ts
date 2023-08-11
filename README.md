@@ -4,6 +4,10 @@ Implements a flow field using typescript.
 
 # Installation
 
+```bash
+npm i flow-field-ts
+```
+
 # Usage
 
 ## 1. Create an InitialGrid
